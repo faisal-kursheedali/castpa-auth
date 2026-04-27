@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+  <script>
+    // Bounces the OAuth code back into the app via custom scheme
+    window.location = window.location.href.replace(
+      "https://YOUR_GITHUB_USERNAME.github.io/castpa-auth/callback",
+      "castpa://auth/callback",
+    );
+  </script>
+</html>
