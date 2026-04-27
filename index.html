@@ -5,16 +5,11 @@
   </head>
   <body>
     <script>
-      var url = window.location.href.replace(
-        "https://faisal-kursheedali.github.io/castpa-auth/",
-        "castpa://auth/callback?",
-      );
-      // Extract just the query string part
       var query = window.location.search;
       if (query) {
         window.location = "castpa://auth/callback" + query;
       } else {
-        document.body.innerText = "No auth parameters found.";
+        document.body.innerText = "No auth parameters.";
       }
     </script>
     <p>Redirecting back to CastPA...</p>
