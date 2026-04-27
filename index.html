@@ -1,10 +1,22 @@
 <!doctype html>
 <html>
-  <script>
-    // Bounces the OAuth code back into the app via custom scheme
-    window.location = window.location.href.replace(
-      "https://YOUR_GITHUB_USERNAME.github.io/castpa-auth/callback",
-      "castpa://auth/callback",
-    );
-  </script>
+  <head>
+    <title>CastPA Auth</title>
+  </head>
+  <body>
+    <script>
+      var url = window.location.href.replace(
+        "https://faisal-kursheedali.github.io/castpa-auth/",
+        "castpa://auth/callback?",
+      );
+      // Extract just the query string part
+      var query = window.location.search;
+      if (query) {
+        window.location = "castpa://auth/callback" + query;
+      } else {
+        document.body.innerText = "No auth parameters found.";
+      }
+    </script>
+    <p>Redirecting back to CastPA...</p>
+  </body>
 </html>
